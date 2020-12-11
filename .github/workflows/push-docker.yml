@@ -16,7 +16,7 @@ jobs:
       - name: Publish Docker
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: registry.cn-hangzhou.aliyuncs.com/dreamer2q/hduin-cas-go
+          name: registry.cn-hangzhou.aliyuncs.com/dreamer2q/typecho
           registry: registry.cn-hangzhou.aliyuncs.com
           username: ${{ secrets.DOCKER_USER }} # 用户名
           password: ${{ secrets.DOCKER_PASS }} # 密码
