@@ -1,0 +1,26 @@
+
+name: Build & Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Publish Docker
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: registry.cn-hangzhou.aliyuncs.com/dreamer2q/hduin-cas-go
+          registry: registry.cn-hangzhou.aliyuncs.com
+          username: ${{ secrets.DOCKER_USER }} # 用户名
+          password: ${{ secrets.DOCKER_PASS }} # 密码
+          dockerfile: Dockerfile
+          snapshot: true
+
+
