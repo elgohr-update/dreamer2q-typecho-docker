@@ -2,11 +2,12 @@ FROM php:7.3-fpm-alpine
 
 LABEL maintainer="dreamer22qq@gmail.com"
 
-ENV LIGHTTPD_VERSION=1.4.55-r1
+# ENV LIGHTTPD_VERSION=1.4.55-r1
 
 RUN apk --update --no-cache add \
   # install lighttpd
-  lighttpd=${LIGHTTPD_VERSION} \
+  #=${LIGHTTPD_VERSION} \
+  lighttpd \
   lighttpd-mod_auth \
   unzip wget \
   && docker-php-ext-install \
