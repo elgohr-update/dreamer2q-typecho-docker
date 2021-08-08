@@ -9,6 +9,8 @@ And this [repo](#) provides the basic environment to run `typecho`
 
 > To get a deep sight, please referer [Dockerfile](Dockerfile).
 
+Docker image of `lighttpd` has been deployed [here](https://dreamer2q.wang), take a look for yourself.
+
 ## Quick Start
 
 1. Clone this repo
