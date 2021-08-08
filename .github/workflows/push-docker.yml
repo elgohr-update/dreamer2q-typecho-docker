@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-nginx:
-    name: Build & Deploy
+    name: Typecho Nginx
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -23,7 +23,7 @@ jobs:
           snapshot: true
 
   build-lighttpd:
-    name: Build & Deploy
+    name: Typecho Lighttpd
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
