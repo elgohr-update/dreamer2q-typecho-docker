@@ -2,13 +2,9 @@ FROM php:7.3-fpm-alpine
 
 LABEL maintainer="dreamer22qq@gmail.com"
 
-ENV LIGHTTPD_VERSION=1.4.55-r1
-
 RUN apk --update --no-cache add \
-  # install lighttpd
-  lighttpd=${LIGHTTPD_VERSION} \
-  lighttpd-mod_auth \
-  unzip wget \
+  # install nginx 
+  nginx unzip wget \
   && docker-php-ext-install \
   # php dependencies
   pdo_mysql bcmath \
@@ -24,14 +20,13 @@ RUN apk --update --no-cache add \
   && rm -rf /tmp/* \
   && rm -rf /var/cache/apk/* 
 
-# copy files
-COPY config/lighttpd/* /etc/lighttpd/
-COPY start-httpd.sh /start.sh
+COPY config/nginx/* /etc/nginx/
+COPY start-nginx.sh /start.sh
 RUN chmod a+x /start.sh
 
 # volumes
 VOLUME /var/www
-VOLUME /etc/lighttpd
+VOLUME /etc/nginx
 
 EXPOSE 80
 
