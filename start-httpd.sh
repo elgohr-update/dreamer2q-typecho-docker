@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-chmod a+w /dev/pts/0
+# chmod a+w /dev/pts/0
 
 echo -n "[script] starting php-fpm as backgound service..."
 php-fpm &
